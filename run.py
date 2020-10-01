@@ -116,12 +116,12 @@ banner = """
            @author: corrykalam
 """
 menu = """
-[1] Check Balance
-[2] Send Rp.1
-[3] Send Rp.1 (Mass Sender)
-[4] Send other amount
-[5] Send other amount (Mass Sender)
-[6] Change pin account (Only change json)
+[1] Check Saldo
+[2] Kirim Rp.1
+[3] Kirim Rp.1 (Mass Sender)
+[4] Kirim dengan nominal lain 
+[5] Kirim dengan nominal lain (Mass Sender)
+[6] Ganti PIN Akun (Only change json)
 [7] Add accounts
 [8] Delete accounts
 [0] Exit
@@ -192,7 +192,7 @@ else:
         else:
             print("Accounts not found!")
             sys.exit(0)
-        number_log = input('Number to send Rp.1: ')
+        number_log = input('Number untuk send Rp.1: ')
         wallet_log = checkWalletCode(number_log, token, unique)
         if wallet_log == False:
             sys.exit(0)
@@ -206,7 +206,7 @@ else:
                 no += 1
                 username += "[%s]%s \n"%(str(no), anjay)
         print(username)
-        accounts_enter = input('Select accounts: ')
+        accounts_enter = input('Pilih accounts: ')
         if int(accounts_enter) < len(config)+1:
             token = ""
             pin = ""
@@ -218,7 +218,7 @@ else:
         else:
             print("Accounts not found!")
             sys.exit(0)
-        number_logx = input('Number to send Rp.1 Mass (Delimiter `,`): ')
+        number_logx = input('Nomor to send Rp.1 Mass (Delimiter `,`): ')
         for numbermass in number_logx.split(","):
             wallet_logx = checkWalletCode(numbermass, token, unique)
             if wallet_logx == False:
